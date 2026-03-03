@@ -47,7 +47,7 @@ export default function App() {
     <div>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" index exact element={<Home />} />
         <Route path="/index.html" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/login.html" element={<Login />} />
