@@ -11,6 +11,7 @@ export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const isImageBackgroundPage = ['/', '/index.html', '/login', '/login.html'].includes(location.pathname);
+  const showBackButton = location.pathname !== '/' && location.pathname !== '/dashboard';
 
   useEffect(() => {
     // Check for saved dark mode preference or system preference
@@ -53,7 +54,7 @@ export default function Header() {
           if (window.history.length > 1) navigate(-1);
           else navigate('/');
         }}
-        style={{ display: location.pathname === '/' ? 'none' : undefined }}
+        style={{ display: showBackButton ? undefined : 'none' }}
       >
         {'\uD83D\uDD19'}
       </button>

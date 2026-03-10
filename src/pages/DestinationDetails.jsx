@@ -145,7 +145,7 @@ export default function DestinationDetails(){
           </p>
         </div>
 
-        <div className="grid grid-3">
+        <div className="grid grid-3 mobile-swipe-grid">
           {visibleDestinations.map((destination) => (
             <div className="card" key={destination.id}>
               <img src={destination.image} alt={destination.name} style={{height:200, width:'100%', objectFit:'cover', borderRadius:8, marginBottom:16}} />

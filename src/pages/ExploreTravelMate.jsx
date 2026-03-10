@@ -18,7 +18,7 @@ export default function ExploreTravelMate() {
 
         <section id="features" className="card" style={{ marginBottom: '2rem' }}>
           <div className="card-header">Features</div>
-          <div className="grid grid-3">
+          <div className="grid grid-3 mobile-swipe-grid">
             <div className="card">
               <div style={{fontSize:'3rem', textAlign:'center', marginBottom:'1rem'}}>🗓️</div>
               <h3>Smart Trip Planning</h3>
@@ -78,7 +78,7 @@ export default function ExploreTravelMate() {
           <p style={{maxWidth:'760px', margin:'0 auto 2rem', color:'var(--text-secondary)', fontSize:'1.05rem'}}>
             Have questions about planning, booking, or your account? Our team is ready to help you build your next great trip.
           </p>
-          <div className="grid grid-3" style={{ marginBottom: '2rem' }}>
+          <div className="grid grid-3 mobile-swipe-grid" style={{ marginBottom: '2rem' }}>
             <div className="card">
               <h4 style={{marginBottom:'0.5rem'}}>📧 Email</h4>
               <p><a href="mailto:support@travelmate.com" style={{color:'var(--text-primary)', textDecoration:'none'}}>support@travelmate.com</a></p>

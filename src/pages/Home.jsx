@@ -24,7 +24,7 @@ export default function Home(){
 
       <section id="features" className="container">
         <h2 style={{textAlign:'center', fontSize:'2.5rem', marginBottom:'3rem', color:'var(--text-primary)'}}>Why Choose TravelMate?</h2>
-        <div className="grid grid-3">
+        <div className="grid grid-3 mobile-swipe-grid">
           <div className="card">
             <div style={{fontSize:'3rem', textAlign:'center', marginBottom:'1rem'}}>🗓️</div>
             <h3 style={{textAlign:'center', marginBottom:'1rem'}}>Smart Trip Planning</h3>
@@ -58,7 +58,7 @@ export default function Home(){
         </div>
       </section>
 
-      <section style={{background:'linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%)', color:'white', padding:'4rem 2rem', textAlign:'center'}}>
+      <section className="home-highlight-section" style={{background:'linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%)', color:'white', padding:'4rem 2rem', textAlign:'center'}}>
         <div className="container">
           <h2 style={{fontSize:'2.5rem', marginBottom:'3rem'}}>Join Thousands of Happy Travelers</h2>
           <div className="stats-grid">
@@ -82,7 +82,7 @@ export default function Home(){
         </div>
       </section>
 
-      <section id="about" style={{background:'var(--surface-color)', padding:'5.5rem 2rem', minHeight:'88vh', display:'flex', alignItems:'center'}}>
+      <section id="about" className="home-about-section" style={{background:'var(--surface-color)', padding:'5.5rem 2rem', minHeight:'88vh', display:'flex', alignItems:'center'}}>
         <div className="container">
           <h2 style={{fontSize:'2.75rem', marginBottom:'0.5rem', textAlign:'center', color:'var(--text-primary)'}}>About TravelMate</h2>
           <p style={{maxWidth:'850px', margin:'0 auto 3rem', textAlign:'center', color:'var(--text-secondary)', fontSize:'1.12rem', lineHeight:1.8}}>
@@ -105,13 +105,13 @@ export default function Home(){
         </div>
       </section>
 
-      <section id="contact" style={{background:'linear-gradient(135deg, #0f172a 0%, #1d4ed8 45%, #0ea5e9 100%)', color:'white', padding:'6rem 2rem', textAlign:'center'}}>
+      <section id="contact" className="home-contact-section" style={{background:'linear-gradient(135deg, #0f172a 0%, #1d4ed8 45%, #0ea5e9 100%)', color:'white', padding:'6rem 2rem', textAlign:'center'}}>
         <div className="container">
           <h2 style={{fontSize:'2.75rem', marginBottom:'0.75rem'}}>Get In Touch</h2>
           <p style={{maxWidth:'760px', margin:'0 auto 2.5rem', color:'rgba(255,255,255,0.9)', fontSize:'1.1rem'}}>
             Have questions about planning, booking, or your account? Our team is ready to help you build your next great trip.
           </p>
-          <div className="grid grid-3" style={{gap:'1.25rem', marginBottom:'2.5rem'}}>
+          <div className="grid grid-3 mobile-swipe-grid" style={{gap:'1.25rem', marginBottom:'2.5rem'}}>
             <div style={{background:'rgba(255,255,255,0.14)', border:'1px solid rgba(255,255,255,0.35)', borderRadius:'0.9rem', padding:'1.2rem'}}>
               <h4 style={{marginBottom:'0.4rem'}}>{'\uD83D\uDCE7'} Email</h4>
               <p><a href="mailto:support@travelmate.com" style={{color:'white', textDecoration:'none'}}>support@travelmate.com</a></p>
@@ -137,7 +137,7 @@ export default function Home(){
         </div>
       </section>
 
-      <section style={{background:'var(--surface-color)', padding:'4rem 2rem', textAlign:'center'}}>
+      <section className="home-cta-section" style={{background:'var(--surface-color)', padding:'4rem 2rem', textAlign:'center'}}>
         <div className="container">
           <h2 style={{fontSize:'2.5rem', marginBottom:'1rem'}}>Ready to Start Your Adventure?</h2>
           <p style={{fontSize:'1.125rem', color:'var(--text-light)', marginBottom:'2rem'}}>Join TravelMate today and plan your perfect trip!</p>

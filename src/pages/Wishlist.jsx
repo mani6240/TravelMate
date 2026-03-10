@@ -65,7 +65,7 @@ export default function Wishlist() {
           </div>
         )}
 
-        <div className="grid grid-3">
+        <div className="grid grid-3 mobile-swipe-grid">
           {wishlistItems.map((item) => (
             <div className="card" key={item.id}>
               <img

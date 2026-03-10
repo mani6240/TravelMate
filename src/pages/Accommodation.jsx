@@ -75,7 +75,7 @@ export default function Accommodation(){
           </div>
         </div>
 
-        <div className="grid grid-2">
+        <div className="grid grid-2 mobile-swipe-grid">
           <div className="card">
             <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=60" alt="The Grand Hotel Paris" style={{height:200, width:'100%', objectFit:'cover', borderRadius:8, marginBottom:16}} />
             <h3>The Grand Hotel Paris</h3>

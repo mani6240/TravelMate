@@ -54,7 +54,7 @@ export default function Dashboard(){
 
         <div className="card" style={{marginBottom: '2rem'}}>
           <div className="card-header">Quick Actions</div>
-          <div className="grid grid-3">
+          <div className="grid grid-3 mobile-swipe-grid">
             <a href="/trip-planner" className="btn btn-primary" style={{textAlign: 'center', textDecoration: 'none'}}>+ New Trip</a>
             <button
               className="btn btn-outline"
