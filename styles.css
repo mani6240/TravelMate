@@ -1142,26 +1142,37 @@ footer {
 @media (max-width: 768px) {
 	/* Header Responsive */
 	header {
-		padding: 1rem 1rem;
+		padding: 0.9rem 1rem;
+		gap: 0.75rem;
+		justify-content: space-between;
 	}
 
 	/* show back button on small screens */
 	.back-btn { display: block; }
 
-	/* center logo and place buttons at edges */
-	header { position: relative; }
-	.logo { position: absolute; left: 50%; transform: translateX(-50%); order: 0; }
-	.menu-toggle { position: absolute; right: 1rem; order: 0; }
-	.back-btn { position: absolute; left: 1rem; }
+	/* keep some breathing room around the brand on small screens */
+	header { position: sticky; }
+	.logo { position: static; left: auto; transform: none; order: 1; margin: 0 auto; max-width: calc(100% - 7rem); }
+	.menu-toggle { position: static; right: auto; order: 2; }
+	.back-btn { position: static; left: auto; flex: 0 0 auto; }
 
 	.logo {
-		font-size: 1.5rem;
+		font-size: 1.3rem;
+	}
+
+	.logo-wordmark {
+		gap: 0;
+	}
+
+	.logo-emblem {
+		width: 2.35rem;
+		height: 2.35rem;
 	}
 
 	.menu-toggle {
 		display: block;
 		order: 2;
-		margin-left: auto;
+		margin-left: 0;
 	}
 
 	nav {
@@ -1216,16 +1227,16 @@ footer {
 
 	/* Hero Section */
 	.hero {
-		padding: 3rem 1rem;
-		min-height: 82vh;
+		padding: 2.75rem 1rem;
+		min-height: 74vh;
 	}
 
 	.hero h1 {
-		font-size: 1.75rem;
+		font-size: 1.65rem;
 	}
 
 	.hero p {
-		font-size: 1rem;
+		font-size: 0.95rem;
 	}
 
 	.hero-buttons {
@@ -1301,6 +1312,12 @@ footer {
 
 	.app-shell-content {
 		margin-left: 0;
+	}
+
+	.app-shell .sidebar {
+		left: 0;
+		top: 70px;
+		height: calc(100vh - 70px);
 	}
 
 	/* Grid */
@@ -1383,26 +1400,33 @@ footer {
 @media (max-width: 480px) {
 	/* Header */
 	header {
-		gap: 0.5rem;
+		padding: 0.8rem 0.85rem;
+		gap: 0.45rem;
 	}
 
 	.logo {
-		font-size: 1.2rem;
+		font-size: 1.08rem;
+		max-width: calc(100% - 6rem);
+	}
+
+	.logo-emblem {
+		width: 2rem;
+		height: 2rem;
 	}
 
 	/* Hero */
 	.hero {
-		padding: 2rem 1rem;
-		min-height: 76vh;
+		padding: 2rem 0.9rem;
+		min-height: 68vh;
 	}
 
 	.hero h1 {
-		font-size: 1.6rem;
+		font-size: 1.45rem;
 		line-height: 1.2;
 	}
 
 	.hero p {
-		font-size: 1rem;
+		font-size: 0.92rem;
 		margin-bottom: 1rem;
 	}
 
@@ -1413,6 +1437,20 @@ footer {
 	/* Container */
 	.container {
 		padding: 0.75rem;
+	}
+
+	.home-highlight-section,
+	.home-about-section,
+	.home-contact-section,
+	.home-cta-section {
+		padding: 2.15rem 0.85rem !important;
+	}
+
+	.home-highlight-section h2,
+	.home-about-section h2,
+	.home-contact-section h2,
+	.home-cta-section h2 {
+		font-size: 1.45rem !important;
 	}
 
 	/* Grid */
@@ -1653,6 +1691,11 @@ html {
 .table-responsive {
   width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-swipe-grid {
+  display: grid;
 }
 
 .trip-table-actions {
@@ -1718,70 +1761,66 @@ html {
   }
 
   .table-responsive {
-    overflow-x: visible;
+    overflow-x: auto;
+    padding-bottom: 0.35rem;
   }
 
   .mobile-card-table {
-    border: 0;
-    box-shadow: none;
-    background: transparent;
-  }
-
-  .mobile-card-table thead {
-    display: none;
-  }
-
-  .mobile-card-table,
-  .mobile-card-table tbody,
-  .mobile-card-table tr,
-  .mobile-card-table td {
-    display: block;
-    width: 100%;
-  }
-
-  .mobile-card-table tr {
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-radius: 0.65rem;
-    margin-bottom: 0.9rem;
-    padding: 0.35rem 0;
-    box-shadow: var(--shadow);
-  }
-
-  .mobile-card-table td {
-    position: relative;
-    border: 0;
-    border-bottom: 1px dashed var(--border-color);
-    text-align: right;
-    padding: 0.7rem 0.9rem 0.7rem 52%;
-    white-space: normal;
-  }
-
-  .mobile-card-table td:last-child {
-    border-bottom: 0;
-  }
-
-  .mobile-card-table td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 0.9rem;
-    top: 0.7rem;
-    max-width: 46%;
-    text-align: left;
-    font-weight: 700;
-    color: var(--text-secondary);
+    min-width: 640px;
   }
 
   .mobile-table-action {
-    text-align: left !important;
-    padding-left: 0.9rem !important;
+    white-space: nowrap;
   }
 
-  .mobile-table-action::before {
-    position: static !important;
-    display: block;
-    margin-bottom: 0.4rem;
-    max-width: 100%;
+  .stats-grid,
+  .mobile-swipe-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(260px, 82vw);
+    grid-template-columns: none;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.35rem;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .stats-grid > *,
+  .mobile-swipe-grid > * {
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+
+  .home-highlight-section,
+  .home-about-section,
+  .home-contact-section,
+  .home-cta-section {
+    padding: 2.75rem 1rem !important;
+  }
+
+  .home-highlight-section h2,
+  .home-about-section h2,
+  .home-contact-section h2,
+  .home-cta-section h2 {
+    font-size: 1.8rem !important;
+    margin-bottom: 1.1rem !important;
+  }
+
+  .home-highlight-section .stat-card {
+    padding: 1rem !important;
+  }
+
+  .home-highlight-section .stat-card div:first-child {
+    font-size: 1.9rem !important;
+  }
+
+  .home-about-section p,
+  .home-contact-section p,
+  .home-cta-section p {
+    font-size: 0.96rem !important;
+    line-height: 1.65 !important;
   }
 
   .trip-table-actions {
